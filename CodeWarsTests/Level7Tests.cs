@@ -82,5 +82,41 @@ namespace CodeWarsTests
         {
             Assert.Equal("sihT si na !elpmaxe", ReverseWords.Run("This is an example!"));
         }
+
+        [Fact]
+        public void TestElevatorDistance()
+        {
+            Assert.Equal(2, ElevatorDistance.Run(new int[] {1,2,3 }));
+            Assert.Equal(18, ElevatorDistance.Run(new int[] { 7, 1, 7, 1 }));
+        }
+
+        [Fact]
+        public void TestYoureASquare()
+        {
+            Assert.True(YoureASquare.Run(4));
+            Assert.False(YoureASquare.Run(3));
+            Assert.True(YoureASquare.Run(0));
+            Assert.False(YoureASquare.Run(-1));
+        }
+
+        [Fact]
+        public void TestGreetMe()
+        {
+            Assert.Equal("Hello Riley!", GreetMe.Run("riley"));
+            Assert.Equal("Hello Jack!", GreetMe.Run("JACK"));
+        }
+
+        [Fact]
+        public void TestFindFibonacciLast()
+        {
+            //Assert.Equal(1, FindFibonacciLast.GetFibonacciNumber(1));
+            //Assert.Equal(1, FindFibonacciLast.Run(1));
+
+            //Assert.Equal(610, FindFibonacciLast.GetFibonacciNumber(15));
+            //Assert.Equal(0, FindFibonacciLast.Run(15));
+            
+            //Assert.Equal(5, FindFibonacciLast.Run(193150));
+            Assert.Equal(0, FindFibonacciLast.Run(300));
+        }
     }
 }
