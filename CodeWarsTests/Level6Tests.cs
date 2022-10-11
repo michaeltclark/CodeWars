@@ -60,5 +60,22 @@ namespace CodeWarsTests
             Assert.True(IPValidation.Run("1.2.3.4"));
             Assert.True(IPValidation.Run("123.45.67.89"));
         }
+
+        [Fact]
+        public void TestDuplicateCount()
+        {
+            Assert.Equal(0, TrainingDuplicates.DuplicateCount(""));
+            Assert.Equal(0, TrainingDuplicates.DuplicateCount("abcde"));
+            Assert.Equal(2, TrainingDuplicates.DuplicateCount("aabbcde"));
+            Assert.Equal(2, TrainingDuplicates.DuplicateCount("aabBcde")); //, "should ignore case");
+            Assert.Equal(1, TrainingDuplicates.DuplicateCount("Indivisibility"));
+            Assert.Equal(2, TrainingDuplicates.DuplicateCount("Indivisibilities")); // ,  "characters may not be adjacent");
+        }
+
+        [Fact]
+        public void TestUniqueInOrder()
+        {
+            Assert.Equal("ABCDAB", UniqueInOrder.Run("AAAABBBCCDAABBB"));
+        }
     }
 }
